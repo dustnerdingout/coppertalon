@@ -261,6 +261,8 @@ section { padding: 100px 0; }
 .info .card h3 { font-size: 1.3rem; margin-bottom: 6px; }
 .info .card p, .info .card a { font-size: 1rem; }
 .hours { list-style: none; }
+.info .card .hours li { padding: 6px 0; }
+.info .card .hours li::before { display: none; }
 .hours li { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px dashed var(--line); color: var(--muted); font-size: 0.95rem; }
 .hours li:last-child { border: 0; }
 .hours li span:last-child { color: var(--cream); }
