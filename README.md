@@ -2,7 +2,7 @@
 
 **Sharp Eye. Flawless Finish.**
 
-The website for Copper Talon Detailing Co., an auto detailing business serving Killeen, TX. It's a plain HTML, CSS, and JavaScript site. There's nothing to install and no build step.
+The website for Copper Talon Detailing Co., a mobile auto detailing and ceramic coating business serving Killeen, TX. It's a plain HTML, CSS, and JavaScript site. There's nothing to install and no build step.
 
 ## Pages
 
@@ -55,7 +55,7 @@ The brand colors are at the top of `css/style.css` under `:root`. Change `--copp
 
 ## How the quote form works
 
-When a visitor clicks **Send Request**, their email app opens with a message already filled in: name, phone, vehicle, services picked, preferred date, and notes. They just hit send.
+When a visitor clicks **Send Request**, their email app opens with a message already filled in: name, phone, vehicle, location, services picked, preferred date, and notes. They just hit send.
 
 Want requests to land in an inbox without the visitor's email app? Hook the form up to a service like [Formspree](https://formspree.io/guides) or [Netlify Forms](https://docs.netlify.com/manage/forms/setup/).
 

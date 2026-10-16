@@ -230,7 +230,7 @@ section { padding: 100px 0; }
 /* Contact */
 .contact-grid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 40px; align-items: start; }
 .form { background: var(--char); border: 1px solid var(--line); border-radius: var(--radius); padding: 36px; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; }
 .field { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
 .field label { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
 .field input, .field select, .field textarea {

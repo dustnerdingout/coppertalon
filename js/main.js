@@ -47,6 +47,7 @@ if (form) {
       `Phone: ${d.get("phone")}`,
       `Email: ${d.get("email")}`,
       `Vehicle: ${d.get("vehicle")}`,
+      `Location: ${d.get("location")}`,
       `Services: ${services}`,
       `Preferred date: ${d.get("date") || "Flexible"}`,
       "",
