@@ -36,13 +36,13 @@ You can also just double click `index.html` to open it.
 ## Common edits
 
 ### Phone number and email
-The placeholders are `(555) 000-0000` and `hello@coppertalondetailing.com`. Swap them in:
+The phone is `(254) 225-1954` and the email is `hello@coppertalondetailing.com`. To change either one, update it in:
 
 * The footer of all four HTML pages
 * The info cards in `contact.html`
 * `CONTACT_EMAIL` at the top of `js/main.js` (this is where quote requests go)
 
-Tip: in Cursor or VS Code, use Find and Replace across the whole folder to change them all at once.
+Tip: in Cursor or VS Code, use Find and Replace across the whole folder to change them all at once. For the phone, also replace the link version, `tel:+12542251954`.
 
 ### Prices
 All prices live in `pricing.html`. Search for the dollar amount (for example `$99`) and change it.
@@ -74,7 +74,6 @@ Prices are set at least 30% below the lowest published prices from detailers nea
 
 ## Before launch checklist
 
-* Replace the placeholder phone and email
 * Confirm business hours
 * Recheck competitor prices and your own costs
 * Add real before and after photos of your work
