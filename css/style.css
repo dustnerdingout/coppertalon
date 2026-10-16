@@ -95,7 +95,7 @@ h3 { font-size: 1.6rem; }
 }
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: 76px; }
 .brand { display: flex; align-items: center; gap: 12px; color: var(--cream); }
-.brand img { width: 52px; height: 52px; border-radius: 50%; }
+.brand img { width: auto; height: 52px; }
 .brand span { font-family: var(--display); font-weight: 800; font-size: 1.3rem; letter-spacing: 0.06em; line-height: 1; }
 .brand small { display: block; font-family: var(--body); font-size: 0.62rem; font-weight: 600; letter-spacing: 0.3em; color: var(--copper); margin-top: 4px; }
 .nav { display: flex; align-items: center; gap: 30px; }
@@ -120,7 +120,7 @@ h3 { font-size: 1.6rem; }
 .hero .lead { margin-bottom: 34px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
 .hero-logo { position: relative; }
-.hero-logo img { width: 100%; max-width: 520px; margin: 0 auto; border-radius: 50%; filter: drop-shadow(0 30px 60px rgba(0,0,0,.7)); }
+.hero-logo img { width: 100%; max-width: 560px; margin: 0 auto; filter: drop-shadow(0 20px 40px rgba(0,0,0,.6)); }
 .trust { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 38px; color: var(--muted); font-size: 0.9rem; }
 .trust span { display: inline-flex; align-items: center; gap: 8px; }
 .trust span::before { content: "★"; color: var(--copper); }
@@ -187,7 +187,7 @@ section { padding: 100px 0; }
   background: radial-gradient(circle, rgba(200,116,63,.18), transparent 65%);
   display: grid; place-items: center;
 }
-.emblem img { width: 92%; border-radius: 50%; }
+.emblem img { width: 66%; }
 
 /* Meaning */
 .meaning { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
@@ -284,7 +284,7 @@ section { padding: 100px 0; }
 .site-footer li { padding: 4px 0; }
 .site-footer a { color: var(--muted); }
 .site-footer a:hover { color: var(--copper-hi); }
-.footer-brand img { width: 84px; border-radius: 50%; margin-bottom: 14px; }
+.footer-brand img { width: 84px; margin-bottom: 14px; }
 .footer-bottom { border-top: 1px solid var(--line); padding-top: 22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 0.82rem; }
 
 /* Reveal */
