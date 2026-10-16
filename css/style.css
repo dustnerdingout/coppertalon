@@ -85,6 +85,7 @@ h3 { font-size: 1.6rem; }
 .btn-copper:hover { color: var(--black); transform: translateY(-2px); }
 .btn-ghost { border-color: var(--copper); color: var(--cream); }
 .btn-ghost:hover { background: var(--copper); color: var(--black); }
+.btn-soon { border: 1px dashed var(--line); color: var(--muted); cursor: default; }
 
 /* Header */
 .site-header {
