@@ -260,7 +260,7 @@ section { padding: 100px 0; }
 .info { display: flex; flex-direction: column; gap: 18px; }
 .info .card { padding: 26px; }
 .info .card h3 { font-size: 1.3rem; margin-bottom: 6px; }
-.info .card p, .info .card a { font-size: 1rem; }
+.info .card p, .info .card a { font-size: 1rem; overflow-wrap: anywhere; }
 .hours { list-style: none; }
 .info .card .hours li { padding: 6px 0; }
 .info .card .hours li::before { display: none; }
@@ -353,3 +353,17 @@ section { padding: 100px 0; }
 .fine { color: var(--muted); font-size: 0.88rem; margin-top: 18px; }
 @media (max-width: 960px) { .price-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 760px) { .price-grid { grid-template-columns: 1fr; } }
+
+/* Contact and quote pages */
+.nav .btn[aria-current="page"] { color: var(--black); }
+.info-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.next-steps { list-style: none; counter-reset: next; margin-top: 8px; }
+.info .card .next-steps li { padding: 8px 0 8px 36px; color: var(--muted); }
+.info .card .next-steps li::before {
+  counter-increment: next; content: counter(next);
+  top: 8px; left: 0; width: 24px; height: 24px; border-radius: 50%;
+  background: none; border: 1px solid var(--copper); color: var(--copper-hi);
+  display: grid; place-items: center; font-size: 0.8rem; font-weight: 600;
+}
+@media (max-width: 960px) { .info-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 760px) { .info-grid { grid-template-columns: 1fr; } }

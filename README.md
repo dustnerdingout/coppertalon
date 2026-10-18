@@ -11,7 +11,8 @@ The website for Copper Talon Detailing Co., a mobile auto detailing and ceramic 
 | Home | `index.html` | Hero with logo, services overview, how it works, why Copper Talon, booking button |
 | Pricing | `pricing.html` | Detail packages, restoration and protection services, add ons, maintenance discount |
 | About Us | `about.html` | The story and meaning behind the Copper Talon name |
-| Contact | `contact.html` | Quote request form, phone, email, hours, common questions |
+| Get a Quote | `quote.html` | Quote request form. Pricing page buttons open it with that service already checked |
+| Contact | `contact.html` | Phone, email, service area, hours, common questions |
 
 ## Folder layout
 
@@ -19,7 +20,8 @@ The website for Copper Talon Detailing Co., a mobile auto detailing and ceramic 
 index.html        Home page
 pricing.html      Services and pricing
 about.html        About Us
-contact.html      Contact and quote form
+quote.html        Quote request form
+contact.html      Contact info and FAQ
 css/style.css     All styling (colors, fonts, layout)
 js/main.js        Mobile menu, scroll animations, quote form
 assets/           Logo, favicon, social share image
@@ -39,7 +41,7 @@ You can also just double click `index.html` to open it.
 The phone is `(254) 225-1954` and the email is `hello@coppertalondetailing.com`. To change either one, update it in:
 
 * The footer of all four HTML pages
-* The info cards in `contact.html`
+* The info cards in `contact.html` and the "Rather Talk?" card in `quote.html`
 * `CONTACT_EMAIL` at the top of `js/main.js` (this is where quote requests go)
 
 Tip: in Cursor or VS Code, use Find and Replace across the whole folder to change them all at once. For the phone, also replace the link version, `tel:+12542251954`.
@@ -74,7 +76,6 @@ Prices are set at least 30% below the lowest published prices from detailers nea
 
 ## Before launch checklist
 
-* Confirm business hours
 * Recheck competitor prices and your own costs
 * Add real before and after photos of your work
 * Turn on GitHub Pages and test the site on your phone

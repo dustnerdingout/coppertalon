@@ -37,6 +37,14 @@ document.querySelectorAll("[data-year]").forEach((el) => {
 // Quote form: opens the visitor's email app with everything filled in
 const form = document.getElementById("quoteForm");
 if (form) {
+  // Pre-check a service when arriving from a pricing button (quote.html?service=Full%20Detail)
+  const picked = new URLSearchParams(window.location.search).get("service");
+  if (picked) {
+    form.querySelectorAll('input[name="services"]').forEach((box) => {
+      if (box.value === picked) box.checked = true;
+    });
+  }
+
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     if (!form.reportValidity()) return;
