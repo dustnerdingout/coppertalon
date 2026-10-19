@@ -62,6 +62,8 @@ Booking runs through Urable. The booking widget is embedded on `book.html` (look
 
 Every **Book Now** button on the site links to `book.html`.
 
+The widget frame is 700 pixels tall on computers and most of the screen on phones. Longer booking steps scroll inside the frame. To change the size, edit `.booking-frame iframe` in `css/style.css`.
+
 ## How the contact form works
 
 The form on `contact.html` asks for name, phone, email, and a message, plus optional vehicle, area, services, and date. When a visitor clicks **Send Message**, their email app opens with everything filled in. They just hit send.
