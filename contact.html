@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Book &amp; Contact | Copper Talon Detailing Co.</title>
-<meta name="description" content="Book mobile detailing online with Copper Talon Detailing Co., or call or text (254) 225-1954. We come to you in Killeen, TX.">
+<title>Contact | Copper Talon Detailing Co.</title>
+<meta name="description" content="Contact Copper Talon Detailing Co. Send a message or call or text (254) 225-1954. Mobile detailing in Killeen, TX.">
 <meta property="og:title" content="Copper Talon Detailing Co.">
 <meta property="og:description" content="Sharp Eye. Flawless Finish. Professional auto detailing in Texas.">
 <meta property="og:image" content="assets/og-image.jpg">
@@ -30,7 +30,7 @@
       <a href="pricing.html">Pricing</a>
       <a href="about.html">About Us</a>
       <a href="contact.html" aria-current="page">Contact</a>
-      <a href="contact.html#book" class="btn btn-copper">Book Now</a>
+      <a href="book.html" class="btn btn-copper">Book Now</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav">
       <span></span><span></span><span></span>
@@ -42,31 +42,65 @@
 
   <section class="page-hero">
     <div class="wrap">
-      <div class="eyebrow">Book &amp; Contact</div>
-      <h1>Let's Get You <span class="copper-text">Booked</span></h1>
-      <p class="lead">Book your detail online below. Questions first? Call, text, or email. We're happy to help.</p>
+      <div class="eyebrow">Contact</div>
+      <h1>Get in <span class="copper-text">Touch</span></h1>
+      <p class="lead">Questions about a service, scheduling, or your vehicle? Send us a message, or call or text. We're happy to help.</p>
     </div>
   </section>
 
-  <section id="book" class="booking-section">
-    <div class="wrap">
-      <div class="section-head center reveal">
-        <div class="eyebrow">Book Online</div>
-        <h2>Pick Your <span class="copper-text">Service &amp; Time</span></h2>
-      </div>
-      <div class="booking-frame">
-        <iframe src="https://app.urable.com/virtual-shop/78ysrrAaBFN6lQn9OYVo" title="Book a detail with Copper Talon Detailing Co." scrolling="no" frameborder="0" marginheight="0px" marginwidth="0px" height="1200px" width="100%"></iframe>
-      </div>
-    </div>
-  </section>
+  <section>
+    <div class="wrap contact-grid">
 
-  <section class="alt">
-    <div class="wrap">
-      <div class="section-head center reveal">
-        <div class="eyebrow">Contact</div>
-        <h2>Get in <span class="copper-text">Touch</span></h2>
-      </div>
-      <div class="info info-grid">
+      <form class="form reveal" id="quoteForm" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="vehicle">Vehicle (optional)</label>
+            <input id="vehicle" name="vehicle" type="text" placeholder="2022 Ford F150">
+          </div>
+        </div>
+        <div class="field">
+          <label for="location">Your area (optional)</label>
+          <input id="location" name="location" type="text" autocomplete="street-address" placeholder="Your address or neighborhood">
+        </div>
+        <div class="field">
+          <label>Services you're interested in (optional)</label>
+          <div class="checks">
+            <label><input type="checkbox" name="services" value="Exterior Detail"> Exterior</label>
+            <label><input type="checkbox" name="services" value="Interior Detail"> Interior</label>
+            <label><input type="checkbox" name="services" value="Full Detail"> Full Detail</label>
+            <label><input type="checkbox" name="services" value="Paint Correction"> Paint Correction</label>
+            <label><input type="checkbox" name="services" value="Ceramic Coating"> Ceramic Coating</label>
+            <label><input type="checkbox" name="services" value="Maintenance Plan"> Maintenance Plan</label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="date">Preferred date (optional)</label>
+          <input id="date" name="date" type="date">
+        </div>
+        <div class="field">
+          <label for="message">Your message</label>
+          <textarea id="message" name="message" placeholder="Questions, special requests, pet hair, stains, anything at all."></textarea>
+        </div>
+        <button type="submit" class="btn btn-copper">Send Message</button>
+        <p class="form-status" id="formStatus" role="status"></p>
+        <p class="form-note">We usually reply within one business day.</p>
+      </form>
+
+      <aside class="info">
         <div class="card reveal">
           <h3>Call or Text</h3>
           <p><a href="tel:+12542251954">(254) 225-1954</a></p>
@@ -87,11 +121,12 @@
             <li><span>Sunday</span><span>8am to 6pm</span></li>
           </ul>
         </div>
-      </div>
+      </aside>
+
     </div>
   </section>
 
-  <section>
+  <section class="alt">
     <div class="wrap">
       <div class="section-head center reveal">
         <div class="eyebrow">Good to Know</div>
@@ -122,6 +157,14 @@
     </div>
   </section>
 
+  <section class="cta">
+    <div class="wrap reveal">
+      <div class="eyebrow">Ready to Go?</div>
+      <h2>Book Your <span class="copper-text">Detail</span></h2>
+      <p class="lead">Pick your service and a time that works. We'll bring the detail to you.</p>
+      <a href="book.html" class="btn btn-copper">Book Now</a>
+    </div>
+  </section>
 
 </main>
 
@@ -138,7 +181,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="pricing.html">Services &amp; Pricing</a></li>
           <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html#book">Book Now</a></li>
+          <li><a href="book.html">Book Now</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>

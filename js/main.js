@@ -1,5 +1,8 @@
 // Copper Talon Detailing Co.
 
+// Where contact form messages go.
+const CONTACT_EMAIL = "hello@coppertalondetailing.com";
+
 // Mobile nav
 const toggle = document.getElementById("navToggle");
 const nav = document.getElementById("nav");
@@ -30,3 +33,30 @@ if ("IntersectionObserver" in window) {
 document.querySelectorAll("[data-year]").forEach((el) => {
   el.textContent = new Date().getFullYear();
 });
+
+// Contact form: opens the visitor's email app with everything filled in
+const form = document.getElementById("quoteForm");
+if (form) {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    const d = new FormData(form);
+    const services = d.getAll("services").join(", ") || "Not specified";
+    const body = [
+      `Name: ${d.get("name")}`,
+      `Phone: ${d.get("phone")}`,
+      `Email: ${d.get("email")}`,
+      `Vehicle: ${d.get("vehicle") || "Not specified"}`,
+      `Area: ${d.get("location") || "Not specified"}`,
+      `Services: ${services}`,
+      `Preferred date: ${d.get("date") || "Flexible"}`,
+      "",
+      d.get("message") || "",
+    ].join("\n");
+    const subject = `Website message from ${d.get("name")}`;
+    window.location.href =
+      `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const status = document.getElementById("formStatus");
+    if (status) status.textContent = "Your email app should open with your message ready to send.";
+  });
+}

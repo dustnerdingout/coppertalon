@@ -11,7 +11,8 @@ The website for Copper Talon Detailing Co., a mobile auto detailing and ceramic 
 | Home | `index.html` | Hero with logo, services overview, how it works, why Copper Talon, booking button |
 | Pricing | `pricing.html` | Detail packages, restoration and protection services, add ons, maintenance discount |
 | About Us | `about.html` | The story and meaning behind the Copper Talon name |
-| Book & Contact | `contact.html` | Online booking (Urable), phone, email, service area, hours, common questions |
+| Book Now | `book.html` | Online booking through the Urable widget |
+| Contact | `contact.html` | Contact form, phone, email, service area, hours, common questions |
 
 ## Folder layout
 
@@ -19,9 +20,10 @@ The website for Copper Talon Detailing Co., a mobile auto detailing and ceramic 
 index.html        Home page
 pricing.html      Services and pricing
 about.html        About Us
-contact.html      Online booking, contact info, and FAQ
+book.html         Online booking (Urable widget)
+contact.html      Contact form, contact info, and FAQ
 css/style.css     All styling (colors, fonts, layout)
-js/main.js        Mobile menu and scroll animations
+js/main.js        Mobile menu, scroll animations, contact form
 assets/           Logo, favicon, social share image
 ```
 
@@ -38,8 +40,10 @@ You can also just double click `index.html` to open it.
 ### Phone number and email
 The phone is `(254) 225-1954` and the email is `hello@coppertalondetailing.com`. To change either one, update it in:
 
-* The footer of all four HTML pages
+* The footer of all five HTML pages
 * The info cards in `contact.html`
+* The "Questions first?" line in `book.html`
+* `CONTACT_EMAIL` at the top of `js/main.js` (this is where contact form messages go)
 
 Tip: in Cursor or VS Code, use Find and Replace across the whole folder to change them all at once. For the phone, also replace the link version, `tel:+12542251954`.
 
@@ -54,13 +58,19 @@ The brand colors are at the top of `css/style.css` under `:root`. Change `--copp
 
 ## Online booking
 
-Booking runs through Urable. The booking widget is embedded on `contact.html` (look for the `<iframe>` with `app.urable.com`). Services, prices, and available times inside the widget are managed in your Urable account, not in this site's files.
+Booking runs through Urable. The booking widget is embedded on `book.html` (look for the `<iframe>` with `app.urable.com`). Services, prices, and available times inside the widget are managed in your Urable account, not in this site's files.
 
-Every **Book Now** button on the site links to `contact.html#book`, which jumps straight to the widget.
+Every **Book Now** button on the site links to `book.html`.
+
+## How the contact form works
+
+The form on `contact.html` asks for name, phone, email, and a message, plus optional vehicle, area, services, and date. When a visitor clicks **Send Message**, their email app opens with everything filled in. They just hit send.
+
+Want messages to land in your inbox without the visitor's email app? Hook the form up to a service like [Formspree](https://formspree.io/guides).
 
 ## Put it online with cPanel
 
-1. Zip the site files: `index.html`, `pricing.html`, `about.html`, `contact.html`, and the `css`, `js`, and `assets` folders.
+1. Zip the site files: `index.html`, `pricing.html`, `about.html`, `contact.html`, `book.html`, and the `css`, `js`, and `assets` folders.
 2. In cPanel, open **File Manager** and go to your domain's folder (usually `public_html`).
 3. Click **Upload** and pick the zip.
 4. Right click the zip, choose **Extract**, and overwrite the old files when asked.
