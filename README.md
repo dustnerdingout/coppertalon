@@ -11,8 +11,7 @@ The website for Copper Talon Detailing Co., a mobile auto detailing and ceramic 
 | Home | `index.html` | Hero with logo, services overview, how it works, why Copper Talon, booking button |
 | Pricing | `pricing.html` | Detail packages, restoration and protection services, add ons, maintenance discount |
 | About Us | `about.html` | The story and meaning behind the Copper Talon name |
-| Get a Quote | `quote.html` | Quote request form. Pricing page buttons open it with that service already checked |
-| Contact | `contact.html` | Phone, email, service area, hours, common questions |
+| Book & Contact | `contact.html` | Online booking (Urable), phone, email, service area, hours, common questions |
 
 ## Folder layout
 
@@ -20,10 +19,9 @@ The website for Copper Talon Detailing Co., a mobile auto detailing and ceramic 
 index.html        Home page
 pricing.html      Services and pricing
 about.html        About Us
-quote.html        Quote request form
-contact.html      Contact info and FAQ
+contact.html      Online booking, contact info, and FAQ
 css/style.css     All styling (colors, fonts, layout)
-js/main.js        Mobile menu, scroll animations, quote form
+js/main.js        Mobile menu and scroll animations
 assets/           Logo, favicon, social share image
 ```
 
@@ -41,8 +39,7 @@ You can also just double click `index.html` to open it.
 The phone is `(254) 225-1954` and the email is `hello@coppertalondetailing.com`. To change either one, update it in:
 
 * The footer of all four HTML pages
-* The info cards in `contact.html` and the "Rather Talk?" card in `quote.html`
-* `CONTACT_EMAIL` at the top of `js/main.js` (this is where quote requests go)
+* The info cards in `contact.html`
 
 Tip: in Cursor or VS Code, use Find and Replace across the whole folder to change them all at once. For the phone, also replace the link version, `tel:+12542251954`.
 
@@ -55,20 +52,21 @@ Edit the list under "Hours" in `contact.html`.
 ### Colors
 The brand colors are at the top of `css/style.css` under `:root`. Change `--copper` to shift the main accent color everywhere.
 
-## How the quote form works
+## Online booking
 
-When a visitor clicks **Send Request**, their email app opens with a message already filled in: name, phone, vehicle, location, services picked, preferred date, and notes. They just hit send.
+Booking runs through Urable. The booking widget is embedded on `contact.html` (look for the `<iframe>` with `app.urable.com`). Services, prices, and available times inside the widget are managed in your Urable account, not in this site's files.
 
-Want requests to land in an inbox without the visitor's email app? Hook the form up to a service like [Formspree](https://formspree.io/guides) or [Netlify Forms](https://docs.netlify.com/manage/forms/setup/).
+Every **Book Now** button on the site links to `contact.html#book`, which jumps straight to the widget.
 
-## Put it online for free with GitHub Pages
+## Put it online with cPanel
 
-1. In this repo on GitHub, go to **Settings**, then **Pages**.
-2. Under "Build and deployment", pick **Deploy from a branch**.
-3. Choose `main` and `/ (root)`, then click **Save**.
-4. After a minute or two, your live link shows at the top of that page.
+1. Zip the site files: `index.html`, `pricing.html`, `about.html`, `contact.html`, and the `css`, `js`, and `assets` folders.
+2. In cPanel, open **File Manager** and go to your domain's folder (usually `public_html`).
+3. Click **Upload** and pick the zip.
+4. Right click the zip, choose **Extract**, and overwrite the old files when asked.
+5. Delete the zip, then open your site and check every page.
 
-To use your own domain, follow GitHub's [custom domain guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).
+Docs: [cPanel File Manager](https://docs.cpanel.net/cpanel/files/file-manager/)
 
 ## How pricing was set
 
@@ -78,4 +76,4 @@ Prices are set at least 30% below the lowest published prices from detailers nea
 
 * Recheck competitor prices and your own costs
 * Add real before and after photos of your work
-* Turn on GitHub Pages and test the site on your phone
+* Test the booking widget and every page on your phone
