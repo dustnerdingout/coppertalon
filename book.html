@@ -51,7 +51,9 @@
   <section id="book">
     <div class="wrap">
       <div class="booking-frame reveal">
-        <iframe src="https://app.urable.com/virtual-shop/78ysrrAaBFN6lQn9OYVo" title="Book a detail with Copper Talon Detailing Co." frameborder="0" marginheight="0px" marginwidth="0px" height="700" width="100%"></iframe>
+        <iframe id="strata-booking" src="https://stratacrm.app/b/copper-talon-detailing?embed=1" title="Book with Copper Talon Detailing" style="width:100%;height:640px;border:0" loading="lazy"></iframe>
+        <script>addEventListener("message",function(e){if(e.origin==="https://stratacrm.app"&&e.data){if(e.data.type==="strata:height"){document.getElementById("strata-booking").style.height=e.data.height+"px"}if(e.data.type==="strata:scroll"){var y=document.getElementById("strata-booking").getBoundingClientRect().top+e.data.top;if(y<0||y>innerHeight*.6)scrollBy(0,y-16)}if(e.data.type==="strata:booking-complete"){document.dispatchEvent(new CustomEvent("strata-booking-complete",{detail:e.data}))}}})</script>
+        <!-- When a customer books, your page receives a "strata:booking-complete" message, and the line above fires a "strata-booking-complete" event on your page with the same details (kind, total, currency, serviceIds), for your conversion tracking. -->
       </div>
       <p class="fine center">Questions first? Call or text <a href="tel:+12542251954">(254) 225-1954</a> or <a href="contact.html">send us a message</a>.</p>
     </div>

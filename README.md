@@ -11,7 +11,7 @@ The website for Copper Talon Detailing Co., a mobile auto detailing and ceramic 
 | Home | `index.html` | Hero with logo, services overview, how it works, why Copper Talon, booking button |
 | Pricing | `pricing.html` | Detail packages, restoration and protection services, add ons, maintenance discount |
 | About Us | `about.html` | The story and meaning behind the Copper Talon name |
-| Book Now | `book.html` | Online booking through the Urable widget |
+| Book Now | `book.html` | Online booking through the Strata widget |
 | Contact | `contact.html` | Contact form, phone, email, service area, hours, common questions |
 
 ## Folder layout
@@ -20,7 +20,7 @@ The website for Copper Talon Detailing Co., a mobile auto detailing and ceramic 
 index.html        Home page
 pricing.html      Services and pricing
 about.html        About Us
-book.html         Online booking (Urable widget)
+book.html         Online booking (Strata widget)
 contact.html      Contact form, contact info, and FAQ
 css/style.css     All styling (colors, fonts, layout)
 js/main.js        Mobile menu, scroll animations, contact form
@@ -58,11 +58,11 @@ The brand colors are at the top of `css/style.css` under `:root`. Change `--copp
 
 ## Online booking
 
-Booking runs through Urable. The booking widget is embedded on `book.html` (look for the `<iframe>` with `app.urable.com`). Services, prices, and available times inside the widget are managed in your Urable account, not in this site's files.
+Booking runs through Strata. The booking widget is embedded on `book.html` (look for the `<iframe>` with `stratacrm.app`). Services, prices, and available times inside the widget are managed in your Strata account, not in this site's files.
 
 Every **Book Now** button on the site links to `book.html`.
 
-The widget frame is 700 pixels tall on computers and most of the screen on phones. Longer booking steps scroll inside the frame. To change the size, edit `.booking-frame iframe` in `css/style.css`.
+The small script under the widget resizes the frame to fit each booking step, so there's no empty space or inner scrolling. When a customer finishes booking, the page fires a `strata-booking-complete` event you can use for conversion tracking.
 
 ## How the contact form works
 
