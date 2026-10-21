@@ -12,7 +12,7 @@ The website for Copper Talon Detailing Co., a mobile auto detailing business ser
 | Pricing | `pricing.html` | Main services, packages, add ons, and deposits, matched to Strata |
 | About Us | `about.html` | The story and meaning behind the Copper Talon name |
 | Book Now | `book.html` | Online booking through the Strata widget |
-| Contact | `contact.html` | Strata lead form, contact form, phone, email, service area, hours, common questions |
+| Contact | `contact.html` | Strata lead form, phone, email, service area, hours, common questions |
 
 ## Folder layout
 
@@ -21,9 +21,9 @@ index.html        Home page
 pricing.html      Services and pricing
 about.html        About Us
 book.html         Online booking (Strata widget)
-contact.html      Contact form, contact info, and FAQ
+contact.html      Strata lead form, contact info, and FAQ
 css/style.css     All styling (colors, fonts, layout)
-js/main.js        Mobile menu, scroll animations, contact form
+js/main.js        Mobile menu and scroll animations
 assets/           Logo, favicon, social share image
 ```
 
@@ -43,7 +43,6 @@ The phone is `(254) 225-1954` and the email is `hello@coppertalondetailing.com`.
 * The footer of all five HTML pages
 * The info cards in `contact.html`
 * The "Questions first?" line in `book.html`
-* `CONTACT_EMAIL` at the top of `js/main.js` (this is where contact form messages go)
 
 Tip: in Cursor or VS Code, use Find and Replace across the whole folder to change them all at once. For the phone, also replace the link version, `tel:+12542251954`.
 
@@ -52,7 +51,7 @@ Strata CRM is the source of truth for every service, price, and description. Whe
 
 * `pricing.html`: every service card, package, add on, and the deposit band
 * `index.html`: the "From $X" price on each service card
-* `contact.html`: the "How long", "How much", and "Deposit" FAQ answers and the service checkboxes
+* `contact.html`: the "How long", "How much", and "Deposit" FAQ answers
 * `book.html`: the deposit line above the widget
 
 The big "From" price on each card is the Sedan / Coupe price. SUV / Crossover and Truck / Van / 3 Row prices sit right under it.
@@ -73,13 +72,7 @@ The small script under the widget resizes the frame to fit each booking step, so
 
 ## Strata lead form
 
-The top of `contact.html` has a Strata lead form (look for `data-strata-embed`). Leads from it go straight into your Strata account. The form's fields are managed in Strata.
-
-## How the contact form works
-
-The form on `contact.html` asks for name, phone, email, and a message, plus optional vehicle, area, services, and date. When a visitor clicks **Send Message**, their email app opens with everything filled in. They just hit send.
-
-Want messages to land in your inbox without the visitor's email app? Hook the form up to a service like [Formspree](https://formspree.io/guides).
+`contact.html` has a Strata lead form next to the contact info (look for `data-strata-embed`). Leads from it go straight into your Strata account. The form's fields are managed in Strata.
 
 ## Put it online with cPanel
 
