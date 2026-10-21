@@ -12,7 +12,7 @@ The website for Copper Talon Detailing Co., a mobile auto detailing business ser
 | Pricing | `pricing.html` | Main services, packages, add ons, and deposits, matched to Strata |
 | About Us | `about.html` | The story and meaning behind the Copper Talon name |
 | Book Now | `book.html` | Online booking through the Strata widget |
-| Contact | `contact.html` | Contact form, phone, email, service area, hours, common questions |
+| Contact | `contact.html` | Strata lead form, contact form, phone, email, service area, hours, common questions |
 
 ## Folder layout
 
@@ -70,6 +70,10 @@ Booking runs through Strata. The booking widget is embedded on `book.html` (look
 Every **Book Now** button on the site links to `book.html`.
 
 The small script under the widget resizes the frame to fit each booking step, so there's no empty space or inner scrolling. When a customer finishes booking, the page fires a `strata-booking-complete` event you can use for conversion tracking.
+
+## Strata lead form
+
+The top of `contact.html` has a Strata lead form (look for `data-strata-embed`). Leads from it go straight into your Strata account. The form's fields are managed in Strata.
 
 ## How the contact form works
 
