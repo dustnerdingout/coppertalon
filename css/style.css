@@ -332,7 +332,8 @@ section { padding: 100px 0; }
 }
 
 /* Pricing */
-.price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; align-items: stretch; }
+.price-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 22px; align-items: stretch; }
+.price-grid > .price-card { width: calc((100% - 44px) / 3); }
 .price-card { display: flex; flex-direction: column; }
 .price-card.featured { border-color: var(--copper); box-shadow: 0 0 0 1px var(--copper), 0 30px 60px rgba(200,116,63,.12); }
 .badge { position: absolute; top: -13px; left: 30px; background: var(--copper); color: var(--black); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; padding: 4px 12px; border-radius: 999px; }
@@ -351,8 +352,8 @@ section { padding: 100px 0; }
 .price-table td:not(:first-child) { color: var(--copper-hi); font-weight: 600; white-space: nowrap; }
 .price-table td small { display: block; color: var(--muted); font-weight: 400; font-size: 0.85rem; }
 .fine { color: var(--muted); font-size: 0.88rem; margin-top: 18px; }
-@media (max-width: 960px) { .price-grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 760px) { .price-grid { grid-template-columns: 1fr; } }
+@media (max-width: 960px) { .price-grid > .price-card { width: calc((100% - 22px) / 2); } }
+@media (max-width: 760px) { .price-grid > .price-card { width: 100%; } }
 
 /* Contact and booking */
 .nav .btn[aria-current="page"] { color: var(--black); }
