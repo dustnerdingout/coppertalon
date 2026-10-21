@@ -2,14 +2,14 @@
 
 **Sharp Eye. Flawless Finish.**
 
-The website for Copper Talon Detailing Co., a mobile auto detailing and ceramic coating business serving Killeen, TX. It's a plain HTML, CSS, and JavaScript site. There's nothing to install and no build step.
+The website for Copper Talon Detailing Co., a mobile auto detailing business serving Killeen, TX. It's a plain HTML, CSS, and JavaScript site. There's nothing to install and no build step.
 
 ## Pages
 
 | Page | File | What's on it |
 |---|---|---|
 | Home | `index.html` | Hero with logo, services overview, how it works, why Copper Talon, booking button |
-| Pricing | `pricing.html` | Detail packages, restoration and protection services, add ons, maintenance discount |
+| Pricing | `pricing.html` | Main services, packages, add ons, and deposits, matched to Strata |
 | About Us | `about.html` | The story and meaning behind the Copper Talon name |
 | Book Now | `book.html` | Online booking through the Strata widget |
 | Contact | `contact.html` | Contact form, phone, email, service area, hours, common questions |
@@ -48,7 +48,14 @@ The phone is `(254) 225-1954` and the email is `hello@coppertalondetailing.com`.
 Tip: in Cursor or VS Code, use Find and Replace across the whole folder to change them all at once. For the phone, also replace the link version, `tel:+12542251954`.
 
 ### Prices
-All prices live in `pricing.html`. Search for the dollar amount (for example `$99`) and change it.
+Strata CRM is the source of truth for every service, price, and description. When something changes in Strata, update the site to match:
+
+* `pricing.html`: every service card, package, add on, and the deposit band
+* `index.html`: the "From $X" price on each service card
+* `contact.html`: the "How long", "How much", and "Deposit" FAQ answers and the service checkboxes
+* `book.html`: the deposit line above the widget
+
+The big "From" price on each card is the Sedan / Coupe price. SUV / Crossover and Truck / Van / 3 Row prices sit right under it.
 
 ### Hours
 Edit the list under "Hours" in `contact.html`.
@@ -80,12 +87,8 @@ Want messages to land in your inbox without the visitor's email app? Hook the fo
 
 Docs: [cPanel File Manager](https://docs.cpanel.net/cpanel/files/file-manager/)
 
-## How pricing was set
-
-Prices are set at least 30% below the lowest published prices from detailers near Killeen, TX. Local shops change their rates, so recheck competitor pricing every few months.
-
 ## Before launch checklist
 
-* Recheck competitor prices and your own costs
+* Confirm site prices still match Strata
 * Add real before and after photos of your work
 * Test the booking widget and every page on your phone
