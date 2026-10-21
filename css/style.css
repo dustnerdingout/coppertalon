@@ -100,7 +100,7 @@ h3 { font-size: 1.6rem; }
 .brand span { font-family: var(--display); font-weight: 800; font-size: 1.3rem; letter-spacing: 0.06em; line-height: 1; }
 .brand small { display: block; font-family: var(--body); font-size: 0.62rem; font-weight: 600; letter-spacing: 0.3em; color: var(--copper); margin-top: 4px; }
 .nav { display: flex; align-items: center; gap: 30px; }
-.nav a { color: var(--cream); font-weight: 500; font-size: 0.95rem; letter-spacing: 0.04em; }
+.nav a { white-space: nowrap; color: var(--cream); font-weight: 500; font-size: 0.95rem; letter-spacing: 0.04em; }
 .nav a:hover, .nav a[aria-current="page"] { color: var(--copper-hi); }
 .nav .btn { padding: 10px 20px; font-size: 1rem; }
 .nav-toggle { display: none; background: none; border: 0; width: 44px; height: 44px; cursor: pointer; }
@@ -275,10 +275,8 @@ section { padding: 100px 0; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .footer-brand { grid-column: 1 / -1; }
 }
-@media (max-width: 760px) {
-  body { font-size: 16px; }
-  section { padding: 70px 0; }
-  .wrap { padding: 0 16px; }
+/* Tap menu below 900px so six nav links never crowd the logo */
+@media (max-width: 900px) {
   .nav-toggle { display: block; }
   .nav {
     position: absolute; top: 76px; left: 0; right: 0;
@@ -293,6 +291,11 @@ section { padding: 100px 0; }
   .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
   .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
   .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
+@media (max-width: 760px) {
+  body { font-size: 16px; }
+  section { padding: 70px 0; }
+  .wrap { padding: 0 16px; }
   .hero { padding: 50px 0 70px; }
   .grid-3, .grid-2, .meaning, .steps { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
@@ -333,3 +336,8 @@ section { padding: 100px 0; }
 .booking-frame { margin-bottom: 20px; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: #fff; }
 .booking-frame iframe { display: block; }
 .lead-embed { min-width: 0; }
+
+/* Package pick banner (contact page) */
+.pick-banner { margin-bottom: 18px; padding: 14px 18px; border: 1px solid var(--copper); border-radius: var(--radius); background: rgba(200,116,63,.1); color: var(--cream); }
+.pick-banner[hidden] { display: none; }
+.pick-banner a { margin-left: 6px; white-space: nowrap; }
