@@ -8,7 +8,7 @@ The website for Copper Talon Detailing Co., a mobile auto detailing business ser
 
 | Page | File | What's on it |
 |---|---|---|
-| Home | `index.html` | Hero with logo, services overview, how it works, why Copper Talon, booking button |
+| Home | `index.html` | Full width logo banner, headline and booking buttons, services overview, how it works, why Copper Talon |
 | Detail Menu | `pricing.html` | Main services, packages (`#packages`), Care Plans banner, add ons, and deposits, matched to Strata |
 | Care Plans | `care-plans.html` | Copper Care and Talon Care, how it works, Packages banner. "Inquire About" opens the Contact page with that plan picked |
 | About Us | `about.html` | The story and meaning behind the Copper Talon name |
@@ -42,7 +42,8 @@ css/style.css     All styling (colors, fonts, layout)
 js/main.js        Mobile menu and scroll animations
 js/interest.js    Package and Care Plan pick banner on the Contact page
 sitemap.xml       List of pages for Google
-assets/           Logo, favicon, social share image
+favicon.ico       Browser tab icon
+assets/           Logo icon, home banners (900, 1500, 2000 wide), favicons, social share image
 ```
 
 ## Preview it on your computer
@@ -107,7 +108,7 @@ With no package (or an unknown one) in the link, the Contact page works exactly 
 
 ## Put it online with cPanel
 
-1. Zip the site files: `index.html`, `pricing.html`, `care-plans.html`, `about.html`, `contact.html`, `book.html`, `packages.html`, `memberships.html`, `sitemap.xml`, and the `css`, `js`, and `assets` folders.
+1. Zip the site files: `index.html`, `pricing.html`, `care-plans.html`, `about.html`, `contact.html`, `book.html`, `packages.html`, `memberships.html`, `sitemap.xml`, `favicon.ico`, and the `css`, `js`, and `assets` folders.
 2. In cPanel, open **File Manager** and go to your domain's folder (usually `public_html`).
 3. Click **Upload** and pick the zip.
 4. Right click the zip, choose **Extract**, and overwrite the old files when asked.
