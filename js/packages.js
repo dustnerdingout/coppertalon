@@ -1,5 +1,6 @@
 // Copper Talon Detailing Co.
-// Reads ?package= on the contact page, shows the "You picked" banner,
+// Reads ?interest=package-<code> on the contact page (older ?package=<code>
+// links still work), shows the "You picked" banner,
 // and passes the package name along to the Strata lead form.
 // Loaded before Strata's embed.js so the form sees the updated link.
 
@@ -14,7 +15,11 @@ const PACKAGES = {
 };
 
 (() => {
-  const slug = new URLSearchParams(window.location.search).get("package");
+  const params = new URLSearchParams(window.location.search);
+  const interest = (params.get("interest") || "").toLowerCase();
+  const slug = interest.startsWith("package-")
+    ? interest.slice("package-".length)
+    : params.get("package");
   const pick = slug && PACKAGES[slug.toLowerCase()];
   if (!pick) return;
 

@@ -9,8 +9,8 @@ The website for Copper Talon Detailing Co., a mobile auto detailing business ser
 | Page | File | What's on it |
 |---|---|---|
 | Home | `index.html` | Hero with logo, services overview, how it works, why Copper Talon, booking button |
-| Pricing | `pricing.html` | Main services, a packages teaser, add ons, and deposits, matched to Strata |
-| Packages | `packages.html` | All 4 packages. "Get This Package" opens the Contact page with that package picked |
+| Pricing | `pricing.html` | Main services, add ons, and deposits, matched to Strata, plus a link to Packages |
+| Packages | `packages.html` | All 4 packages. "Request This Package" opens the Contact page with that package picked |
 | About Us | `about.html` | The story and meaning behind the Copper Talon name |
 | Book Now | `book.html` | Online booking through the Strata widget |
 | Contact | `contact.html` | Strata lead form, phone, email, service area, hours, common questions |
@@ -53,7 +53,7 @@ Tip: in Cursor or VS Code, use Find and Replace across the whole folder to chang
 ### Prices
 Strata CRM is the source of truth for every service, price, and description. When something changes in Strata, update the site to match:
 
-* `pricing.html`: every service card, the packages teaser table, add ons, and the deposit band
+* `pricing.html`: every service card, add ons, and the deposit band
 * `packages.html`: every package card and the deposit band
 * `js/packages.js`: the package names and "from" prices used in the Contact page banner
 * `index.html`: the "From $X" price on each service card
@@ -82,7 +82,7 @@ The small script under the widget resizes the frame to fit each booking step, so
 
 ### Package picks
 
-Each "Get This Package" button on `packages.html` links to the Contact page with the package in the link, like `contact.html?package=showroom`. The codes are `pet-owner`, `deep-clean`, `family-hauler`, and `showroom`.
+Each "Request This Package" button on `packages.html` links to the Contact page with the package in the link, like `contact.html?interest=package-showroom`. The codes are `package-pet-owner`, `package-deep-clean`, `package-family-hauler`, and `package-showroom`. Older `?package=showroom` links still work.
 
 `js/packages.js` then:
 
