@@ -1,4 +1,20 @@
 /* Copper Talon Detailing Co. */
+
+/* Self hosted fonts (Latin subset, variable weight) */
+@font-face {
+  font-family: "Big Shoulders Display";
+  font-style: normal;
+  font-weight: 700 800;
+  font-display: swap;
+  src: url("../fonts/big-shoulders-display-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("../fonts/inter-latin.woff2") format("woff2");
+}
 :root {
   --black: #0a0807;
   --coal: #13100e;
@@ -130,8 +146,8 @@ h3 { font-size: 1.6rem; }
 }
 .hero-watermark::before {
   content: ""; position: absolute; inset: 0; z-index: -1;
-  background: url("../assets/logo-icon.webp") center / auto 88% no-repeat;
-  opacity: 0.14; pointer-events: none;
+  background: url("../assets/logo-watermark.webp") center / auto 88% no-repeat;
+  opacity: 0.14; mix-blend-mode: screen; pointer-events: none;
 }
 .hero-centered { text-align: center; padding: 110px 0 120px; }
 .hero-centered .lead { margin: 0 auto 34px; }
@@ -199,7 +215,7 @@ section { padding: 100px 0; }
   background: radial-gradient(circle, rgba(200,116,63,.18), transparent 65%);
   display: grid; place-items: center;
 }
-.emblem img { width: 66%; }
+.emblem img { width: 66%; mix-blend-mode: screen; }
 
 /* Meaning */
 .meaning { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }

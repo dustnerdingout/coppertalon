@@ -17,10 +17,10 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css">
+<link rel="preload" href="/assets/logo-watermark.webp" as="image" fetchpriority="high">
+<link rel="preload" href="/fonts/big-shoulders-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/style.css?v=20261022">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -31,7 +31,7 @@
   "url": "https://coppertalondetailing.com/",
   "telephone": "+1-254-225-1954",
   "email": "hello@coppertalondetailing.com",
-  "logo": "https://coppertalondetailing.com/assets/logo-icon.webp",
+  "logo": "https://coppertalondetailing.com/assets/logo-512.png",
   "image": "https://coppertalondetailing.com/assets/og-image.jpg",
   "priceRange": "$79 to $439",
   "address": {
@@ -90,7 +90,7 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="/">
-      <img src="/assets/logo-icon.webp" alt="Copper Talon owl icon" width="46" height="52">
+      <img src="/assets/logo-icon-46.webp" srcset="/assets/logo-icon-46.webp 1x, /assets/logo-icon-92.webp 2x" alt="Copper Talon owl icon" width="46" height="52">
       <span>COPPER TALON<small>DETAILING CO.</small></span>
     </a>
     <nav class="nav" id="nav">
@@ -310,7 +310,7 @@
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="/assets/logo-icon.webp" alt="Copper Talon owl icon" width="84" height="95" loading="lazy">
+        <img src="/assets/logo-icon-84.webp" srcset="/assets/logo-icon-84.webp 1x, /assets/logo-icon-168.webp 2x" alt="Copper Talon owl icon" width="84" height="95" loading="lazy" decoding="async">
         <p>Copper Talon Detailing Co.<br>Sharp Eye. Flawless Finish.</p>
       </div>
       <div>
@@ -339,6 +339,6 @@
   </div>
 </footer>
 
-<script src="/js/main.js"></script>
+<script src="/js/main.js?v=20261022" defer></script>
 </body>
 </html>

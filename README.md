@@ -50,9 +50,11 @@ robots.txt              Tells search engines where the sitemap is
 sitemap.xml             List of pages for Google
 favicon.ico             Browser tab icon
 css/style.css           All styling (colors, fonts, layout)
+fonts/                  Self hosted Big Shoulders Display and Inter fonts
 js/main.js              Mobile menu and scroll animations
 js/interest.js          Package and Care Plan pick banner on the Contact page
-assets/                 Owl icon, favicons, social share image
+assets/                 Owl icons sized for header and footer, home watermark, About emblem,
+                        512px logo for Google, favicons, social share image
 ```
 
 ## Local SEO
@@ -106,7 +108,14 @@ The big "From" price on each card is the Sedan / Coupe price. SUV / Crossover an
 Edit the list under "Hours" in `contact/index.html`.
 
 ### Home page watermark
-The faded owl behind the home page headline is set in `css/style.css` under `.hero-watermark::before`. Raise `opacity` (now `0.14`) to make it stronger, or lower it to make it fainter.
+The faded owl behind the home page headline (`assets/logo-watermark.webp`) is set in `css/style.css` under `.hero-watermark::before`. Raise `opacity` (now `0.14`) to make it stronger, or lower it to make it fainter.
+
+### Speed and caching
+
+* Fonts are hosted on the site (no Google Fonts request) and preloaded.
+* `.htaccess` tells browsers to keep images, fonts, CSS, and JS for a year and compresses text files.
+* Pages load CSS and JS with a version tag, like `/css/style.css?v=20261022`. **After you edit `style.css`, `main.js`, or `interest.js`, change that number on every page** (Find and Replace across the folder) so visitors get the new file instead of a cached one.
+* The owl icons come in exact sizes for the header (46px, 92px) and footer (84px, 168px). The watermark and About emblem are saved on black and blended in with CSS, which keeps them small.
 
 ### Colors
 The brand colors are at the top of `css/style.css` under `:root`. Change `--copper` to shift the main accent color everywhere.
@@ -136,7 +145,7 @@ With no package (or an unknown one) in the link, the Contact page works exactly 
 
 ## Put it online with cPanel
 
-1. Zip the site: `index.html`, `packages.html`, `memberships.html`, `robots.txt`, `sitemap.xml`, `favicon.ico`, and the `pricing`, `care-plans`, `about`, `contact`, `book`, `css`, `js`, and `assets` folders.
+1. Zip the site: `index.html`, `packages.html`, `memberships.html`, `robots.txt`, `sitemap.xml`, `favicon.ico`, and the `pricing`, `care-plans`, `about`, `contact`, `book`, `css`, `js`, `fonts`, and `assets` folders.
 2. In cPanel, open **File Manager** and go to your domain's folder (usually `public_html`).
 3. Click **Upload** and pick the zip.
 4. Right click the zip, choose **Extract**, and overwrite the old files when asked.
@@ -144,7 +153,7 @@ With no package (or an unknown one) in the link, the Contact page works exactly 
 
 ### The `.htaccess` file
 
-`.htaccess` holds the clean URL redirects. Your host may already have its own `.htaccess` in `public_html`, so don't overwrite it blindly:
+`.htaccess` holds the clean URL redirects plus browser caching and compression rules. Your host may already have its own `.htaccess` in `public_html`, so don't overwrite it blindly:
 
 1. In File Manager, click **Settings** (top right) and turn on **Show Hidden Files**.
 2. If `public_html` has no `.htaccess`, upload this one.
