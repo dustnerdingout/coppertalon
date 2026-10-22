@@ -114,11 +114,23 @@ The faded owl behind the home page headline (`assets/logo-watermark.webp`) is se
 
 * Fonts are hosted on the site (no Google Fonts request) and preloaded.
 * `.htaccess` tells browsers to keep images, fonts, CSS, and JS for a year and compresses text files.
-* Pages load CSS and JS with a version tag, like `/css/style.css?v=20261022`. **After you edit `style.css`, `main.js`, or `interest.js`, change that number on every page** (Find and Replace across the folder) so visitors get the new file instead of a cached one.
+* Pages load CSS and JS with a version tag, like `/css/style.css?v=20261023`. **After you edit `style.css`, `main.js`, or `interest.js`, change that number on every page** (Find and Replace across the folder) so visitors get the new file instead of a cached one.
 * The owl icons come in exact sizes for the header (46px, 92px) and footer (84px, 168px). The watermark and About emblem are saved on black and blended in with CSS, which keeps them small.
 
 ### Colors
 The brand colors are at the top of `css/style.css` under `:root`. Change `--copper` to shift the main accent color everywhere.
+
+## Google Analytics
+
+The Google tag (`G-J6C89JL4NH`) sits at the top of the `<head>` on all six pages. `js/main.js` also sends these events:
+
+| Event | When |
+|---|---|
+| `booking_complete` | A customer finishes a booking in the Strata widget (includes the total when Strata sends it) |
+| `phone_click` | Someone taps the phone number |
+| `email_click` | Someone taps the email address |
+
+In GA, go to **Admin > Events** and mark `booking_complete` as a **key event** so it counts as a conversion.
 
 ## Online booking
 
@@ -134,7 +146,7 @@ The small script under the widget resizes the frame to fit each booking step, so
 
 ### Package and Care Plan picks
 
-Each "Request This Package" button on `pricing/index.html` and each "Inquire About" button on `care-plans/index.html` links to the Contact page with the pick in the link, like `contact.html?interest=package-showroom`. The codes are `package-pet-owner`, `package-deep-clean`, `package-family-hauler`, `package-showroom`, `membership-copper-care`, and `membership-talon-care` (the Care Plan codes kept their original names so old links keep working). Older `?package=showroom` links still work.
+Each "Request This Package" button on `pricing/index.html` and each "Inquire About" button on `care-plans/index.html` links to the Contact page with the pick in the link, like `/contact/?interest=package-showroom`. The codes are `package-pet-owner`, `package-deep-clean`, `package-family-hauler`, `package-showroom`, `membership-copper-care`, and `membership-talon-care` (the Care Plan codes kept their original names so old links keep working). Older `?package=showroom` links still work.
 
 `js/interest.js` then:
 

@@ -31,3 +31,27 @@ if ("IntersectionObserver" in window) {
 document.querySelectorAll("[data-year]").forEach((el) => {
   el.textContent = new Date().getFullYear();
 });
+
+// Google Analytics events (the Google tag is in each page's <head>)
+function track(name, params) {
+  if (typeof window.gtag === "function") window.gtag("event", name, params || {});
+}
+
+// Phone and email clicks
+document.addEventListener("click", (e) => {
+  const link = e.target.closest("a[href^='tel:'], a[href^='mailto:']");
+  if (!link) return;
+  const isPhone = link.getAttribute("href").startsWith("tel:");
+  track(isPhone ? "phone_click" : "email_click", { link_url: link.getAttribute("href") });
+});
+
+// Finished bookings from the Strata widget on /book/
+document.addEventListener("strata-booking-complete", (e) => {
+  const d = e.detail || {};
+  track("booking_complete", {
+    value: Number(d.total) || undefined,
+    currency: d.currency || "USD",
+    booking_kind: d.kind,
+    service_ids: Array.isArray(d.serviceIds) ? d.serviceIds.join(",") : d.serviceIds,
+  });
+});
