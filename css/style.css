@@ -275,8 +275,8 @@ section { padding: 100px 0; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .footer-brand { grid-column: 1 / -1; }
 }
-/* Tap menu below 900px so six nav links never crowd the logo */
-@media (max-width: 900px) {
+/* Tap menu below 1000px so seven nav links never crowd the logo */
+@media (max-width: 1000px) {
   .nav-toggle { display: block; }
   .nav {
     position: absolute; top: 76px; left: 0; right: 0;
@@ -337,7 +337,11 @@ section { padding: 100px 0; }
 .booking-frame iframe { display: block; }
 .lead-embed { min-width: 0; }
 
-/* Package pick banner (contact page) */
+/* Three step row (memberships) */
+.steps-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 760px) { .steps-3 { grid-template-columns: 1fr; } }
+
+/* Package and membership pick banner (contact page) */
 .pick-banner { margin-bottom: 18px; padding: 14px 18px; border: 1px solid var(--copper); border-radius: var(--radius); background: rgba(200,116,63,.1); color: var(--cream); }
 .pick-banner[hidden] { display: none; }
 .pick-banner a { margin-left: 6px; white-space: nowrap; }
