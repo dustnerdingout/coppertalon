@@ -8,7 +8,7 @@ The website for Copper Talon Detailing Co., a mobile auto detailing business ser
 
 | Page | File | What's on it |
 |---|---|---|
-| Home | `index.html` | Full width logo banner, headline and booking buttons, services overview, how it works, why Copper Talon |
+| Home | `index.html` | Centered headline and booking buttons over a faded owl watermark, services overview, how it works, why Copper Talon |
 | Detail Menu | `pricing.html` | Main services, packages (`#packages`), Care Plans banner, add ons, and deposits, matched to Strata |
 | Care Plans | `care-plans.html` | Copper Care and Talon Care, how it works, Packages banner. "Inquire About" opens the Contact page with that plan picked |
 | About Us | `about.html` | The story and meaning behind the Copper Talon name |
@@ -43,7 +43,7 @@ js/main.js        Mobile menu and scroll animations
 js/interest.js    Package and Care Plan pick banner on the Contact page
 sitemap.xml       List of pages for Google
 favicon.ico       Browser tab icon
-assets/           Logo icon, home banners (900, 1500, 2000 wide), favicons, social share image
+assets/           Owl icon (also the home page watermark), favicons, social share image
 ```
 
 ## Preview it on your computer
@@ -79,6 +79,9 @@ The big "From" price on each card is the Sedan / Coupe price. SUV / Crossover an
 
 ### Hours
 Edit the list under "Hours" in `contact.html`.
+
+### Home page watermark
+The faded owl behind the home page headline is set in `css/style.css` under `.hero-watermark::before`. Raise `opacity` (now `0.14`) to make it stronger, or lower it to make it fainter.
 
 ### Colors
 The brand colors are at the top of `css/style.css` under `:root`. Change `--copper` to shift the main accent color everywhere.

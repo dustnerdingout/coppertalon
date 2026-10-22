@@ -123,10 +123,17 @@ h3 { font-size: 1.6rem; }
 .trust span { display: inline-flex; align-items: center; gap: 8px; }
 .trust span::before { content: "★"; color: var(--copper); }
 
-/* Home banner (logo artwork on its own dark background) */
-.hero-banner { position: relative; background: #1b1d1c; border-bottom: 1px solid var(--line); }
-.hero-banner img { display: block; width: 100%; max-width: 2000px; height: auto; margin: 0 auto; }
-.hero-centered { text-align: center; padding: 70px 0 90px; }
+/* Home hero: owl watermark behind the headline */
+.hero-watermark {
+  isolation: isolate;
+  background: radial-gradient(ellipse 55% 60% at 50% 50%, rgba(200, 116, 63, 0.2), transparent 70%), var(--black);
+}
+.hero-watermark::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: url("../assets/logo-icon.webp") center / auto 88% no-repeat;
+  opacity: 0.14; pointer-events: none;
+}
+.hero-centered { text-align: center; padding: 110px 0 120px; }
 .hero-centered .lead { margin: 0 auto 34px; }
 .hero-centered .hero-actions, .hero-centered .trust { justify-content: center; }
 
@@ -365,3 +372,4 @@ section { padding: 100px 0; }
   .cross-banner { flex-direction: column; align-items: flex-start; padding: 26px 20px; }
   .cross-banner .btn { width: 100%; }
 }
+@media (max-width: 760px) { .hero-watermark::before { background-size: 92% auto; } .hero-centered { padding: 80px 0 90px; } }
