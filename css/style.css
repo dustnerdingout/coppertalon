@@ -275,8 +275,8 @@ section { padding: 100px 0; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .footer-brand { grid-column: 1 / -1; }
 }
-/* Tap menu below 1000px so seven nav links never crowd the logo */
-@media (max-width: 1000px) {
+/* Tap menu below 900px so the nav links never crowd the logo */
+@media (max-width: 900px) {
   .nav-toggle { display: block; }
   .nav {
     position: absolute; top: 76px; left: 0; right: 0;
@@ -345,3 +345,21 @@ section { padding: 100px 0; }
 .pick-banner { margin-bottom: 18px; padding: 14px 18px; border: 1px solid var(--copper); border-radius: var(--radius); background: rgba(200,116,63,.1); color: var(--cream); }
 .pick-banner[hidden] { display: none; }
 .pick-banner a { margin-left: 6px; white-space: nowrap; }
+
+/* Cross link banner (Detail Menu and Care Plans) */
+#packages { scroll-margin-top: 76px; }
+.cross-section { padding: 0 0 100px; }
+.alt + .cross-section { padding-top: 60px; background: var(--coal); border-bottom: 1px solid var(--line); }
+.cross-banner {
+  display: flex; align-items: center; justify-content: space-between; gap: 28px;
+  padding: 32px 36px; border: 1px solid var(--copper); border-radius: var(--radius);
+  background: linear-gradient(90deg, rgba(200,116,63,.14), rgba(200,116,63,.04));
+}
+.cross-banner h2 { font-size: clamp(1.8rem, 3.4vw, 2.4rem); margin-bottom: 6px; }
+.cross-banner p { color: var(--muted); max-width: 56ch; }
+.cross-banner .btn { flex-shrink: 0; }
+@media (max-width: 760px) {
+  .cross-section { padding-bottom: 70px; }
+  .cross-banner { flex-direction: column; align-items: flex-start; padding: 26px 20px; }
+  .cross-banner .btn { width: 100%; }
+}

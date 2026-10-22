@@ -1,0 +1,11 @@
+# Copper Talon Detailing Co.
+# Permanent (301) redirects for pages that moved.
+RewriteEngine On
+
+# Packages now live on the Detail Menu page (keeps any ?query before #packages)
+RewriteCond %{QUERY_STRING} ^(.+)$
+RewriteRule ^packages\.html$ /pricing.html?%1#packages [R=301,NE,L]
+RewriteRule ^packages\.html$ /pricing.html#packages [R=301,NE,L]
+
+# Memberships were renamed to Care Plans
+RewriteRule ^memberships\.html$ /care-plans.html [R=301,L]
