@@ -10,12 +10,12 @@
 const PASS_PICK_TO_STRATA = true;
 
 const PICKS = {
-  "package-pet-owner": { name: "Pet Owner Interior Package", price: "from $229", back: "pricing.html#packages", backText: "Change package" },
-  "package-deep-clean": { name: "Deep Clean Interior Package", price: "from $249", back: "pricing.html#packages", backText: "Change package" },
-  "package-family-hauler": { name: "Family Hauler Package", price: "from $319", back: "pricing.html#packages", backText: "Change package" },
-  "package-showroom": { name: "Showroom Package", price: "from $389", back: "pricing.html#packages", backText: "Change package" },
-  "membership-copper-care": { name: "Copper Care", price: "from $89/mo", back: "care-plans.html", backText: "Change care plan" },
-  "membership-talon-care": { name: "Talon Care", price: "from $199/mo", back: "care-plans.html", backText: "Change care plan" },
+  "package-pet-owner": { name: "Pet Owner Interior Package", price: "from $229", back: "/pricing/#packages", backText: "Change package" },
+  "package-deep-clean": { name: "Deep Clean Interior Package", price: "from $249", back: "/pricing/#packages", backText: "Change package" },
+  "package-family-hauler": { name: "Family Hauler Package", price: "from $319", back: "/pricing/#packages", backText: "Change package" },
+  "package-showroom": { name: "Showroom Package", price: "from $389", back: "/pricing/#packages", backText: "Change package" },
+  "membership-copper-care": { name: "Copper Care", price: "from $89/mo", back: "/care-plans/", backText: "Change care plan" },
+  "membership-talon-care": { name: "Talon Care", price: "from $199/mo", back: "/care-plans/", backText: "Change care plan" },
 };
 
 (() => {

@@ -6,45 +6,70 @@ The website for Copper Talon Detailing Co., a mobile auto detailing business ser
 
 ## Pages
 
-| Page | File | What's on it |
-|---|---|---|
-| Home | `index.html` | Centered headline and booking buttons over a faded owl watermark, services overview, how it works, why Copper Talon |
-| Detail Menu | `pricing.html` | Main services, packages (`#packages`), Care Plans banner, add ons, and deposits, matched to Strata |
-| Care Plans | `care-plans.html` | Copper Care and Talon Care, how it works, Packages banner. "Inquire About" opens the Contact page with that plan picked |
-| About Us | `about.html` | The story and meaning behind the Copper Talon name |
-| Book Now | `book.html` | Online booking through the Strata widget |
-| Contact | `contact.html` | Strata lead form, phone, email, service area, hours, common questions |
+| Page | Address | File | What's on it |
+|---|---|---|---|
+| Home | `/` | `index.html` | Headline over a faded owl watermark, services, how it works, why Copper Talon, service area |
+| Detail Menu | `/pricing/` | `pricing/index.html` | Main services, packages (`/pricing/#packages`), Care Plans banner, add ons, deposits |
+| Care Plans | `/care-plans/` | `care-plans/index.html` | Copper Care and Talon Care, how it works, Packages banner |
+| About Us | `/about/` | `about/index.html` | The story and meaning behind the Copper Talon name |
+| Book Now | `/book/` | `book/index.html` | Online booking through the Strata widget |
+| Contact | `/contact/` | `contact/index.html` | Strata lead form, phone, email, service area, hours, FAQ |
 
-The menu on every page is: Detail Menu, Care Plans, About Us, Contact, Book Now. The logo links to the home page.
+Each page lives in its own folder as `index.html`, so the address is clean (`/pricing/` instead of `/pricing.html`). All links and file paths start with `/` so they work from any folder.
 
-### Old pages that moved
+### Old addresses that redirect
 
-| Old page | Now | How |
-|---|---|---|
-| `packages.html` | `pricing.html#packages` | 301 redirect in `.htaccess`, plus a tiny backup page |
-| `memberships.html` | `care-plans.html` | 301 redirect in `.htaccess`, plus a tiny backup page |
+`.htaccess` sends every old address to its new home with a permanent (301) redirect, so Google rankings and old links carry over:
 
-The backup pages only matter if the `.htaccess` rules aren't active. They send visitors on, point Google to the new page, and are kept out of search results.
+| Old | New |
+|---|---|
+| `/index.html` | `/` |
+| `/pricing.html` | `/pricing/` |
+| `/care-plans.html` | `/care-plans/` |
+| `/about.html` | `/about/` |
+| `/contact.html` | `/contact/` |
+| `/book.html` | `/book/` |
+| `/packages.html` | `/pricing/#packages` |
+| `/memberships.html` | `/care-plans/` |
+
+`packages.html` and `memberships.html` also stay as tiny backup redirect pages in case `.htaccess` isn't active.
 
 ## Folder layout
 
 ```
-index.html        Home page
-pricing.html      Detail Menu: services, packages, add ons, deposits
-care-plans.html   Care Plans
-about.html        About Us
-book.html         Online booking (Strata widget)
-contact.html      Strata lead form, contact info, and FAQ
-packages.html     Backup redirect to pricing.html#packages
-memberships.html  Backup redirect to care-plans.html
-.htaccess         301 redirects for the old pages (Apache / cPanel)
-css/style.css     All styling (colors, fonts, layout)
-js/main.js        Mobile menu and scroll animations
-js/interest.js    Package and Care Plan pick banner on the Contact page
-sitemap.xml       List of pages for Google
-favicon.ico       Browser tab icon
-assets/           Owl icon (also the home page watermark), favicons, social share image
+index.html              Home page
+pricing/index.html      Detail Menu
+care-plans/index.html   Care Plans
+about/index.html        About Us
+book/index.html         Online booking (Strata widget)
+contact/index.html      Strata lead form, contact info, FAQ
+packages.html           Backup redirect to /pricing/#packages
+memberships.html        Backup redirect to /care-plans/
+.htaccess               Clean URL and 301 redirect rules (Apache / cPanel)
+robots.txt              Tells search engines where the sitemap is
+sitemap.xml             List of pages for Google
+favicon.ico             Browser tab icon
+css/style.css           All styling (colors, fonts, layout)
+js/main.js              Mobile menu and scroll animations
+js/interest.js          Package and Care Plan pick banner on the Contact page
+assets/                 Owl icon, favicons, social share image
 ```
+
+## Local SEO
+
+The site is set up to show up for searches like "mobile detailing near Killeen":
+
+* **Titles and descriptions** on every page name the service and the towns served.
+* **Service area** section on the home page lists Killeen, Harker Heights, Copperas Cove, Nolanville, Belton, Temple, and Lampasas. The same towns are on the Contact page and in the footer.
+* **Structured data** (the `application/ld+json` blocks in each page's `<head>`) tells Google:
+  * Home: the business (name, phone, email, hours, towns served, price range)
+  * Detail Menu: every service and package with its price range
+  * Care Plans: both plans with monthly prices
+  * Contact: the FAQ, which can show up as answers in search results
+* **Canonical tags** on every page point Google to the one true address for that page.
+* **`robots.txt`** and **`sitemap.xml`** list every page for search engines.
+
+To change the towns, update the home page Service Area list, the Contact page Service Area card and FAQ, the footer line, and the `areaServed` list in the structured data on the home, Detail Menu, and Care Plans pages.
 
 ## Preview it on your computer
 
@@ -52,33 +77,33 @@ assets/           Owl icon (also the home page watermark), favicons, social shar
 2. Run `python3 -m http.server 8000`
 3. Go to http://localhost:8000 in your browser.
 
-You can also just double click `index.html` to open it.
+Use the server instead of double clicking files, because links start with `/`.
 
 ## Common edits
 
 ### Phone number and email
 The phone is `(254) 225-1954` and the email is `hello@coppertalondetailing.com`. To change either one, update it in:
 
-* The footer of all six main HTML pages
-* The info cards in `contact.html`
-* The "Questions first?" line in `book.html`
+* The footer of all six pages
+* The info cards in `contact/index.html`
+* The "Questions first?" line in `book/index.html`
 
 Tip: in Cursor or VS Code, use Find and Replace across the whole folder to change them all at once. For the phone, also replace the link version, `tel:+12542251954`.
 
 ### Prices
 Strata CRM is the source of truth for every service, price, and description. When something changes in Strata, update the site to match:
 
-* `pricing.html`: every service card, package card, add ons, and the deposit band
-* `care-plans.html`: both Care Plan cards
+* `pricing/index.html`: every service card, package card, add ons, and the deposit band
+* `care-plans/index.html`: both Care Plan cards
 * `js/interest.js`: the package and plan names and "from" prices used in the Contact page banner
 * `index.html`: the "From $X" price on each service card
-* `contact.html`: the "How long", "How much", and "Deposit" FAQ answers
-* `book.html`: the deposit line above the widget
+* `contact/index.html`: the "How long", "How much", and "Deposit" FAQ answers
+* `book/index.html`: the deposit line above the widget
 
 The big "From" price on each card is the Sedan / Coupe price. SUV / Crossover and Truck / Van / 3 Row prices sit right under it.
 
 ### Hours
-Edit the list under "Hours" in `contact.html`.
+Edit the list under "Hours" in `contact/index.html`.
 
 ### Home page watermark
 The faded owl behind the home page headline is set in `css/style.css` under `.hero-watermark::before`. Raise `opacity` (now `0.14`) to make it stronger, or lower it to make it fainter.
@@ -88,19 +113,19 @@ The brand colors are at the top of `css/style.css` under `:root`. Change `--copp
 
 ## Online booking
 
-Booking runs through Strata. The booking widget is embedded on `book.html` (look for the `<iframe>` with `stratacrm.app`). Services, prices, and available times inside the widget are managed in your Strata account, not in this site's files.
+Booking runs through Strata. The booking widget is embedded on `book/index.html` (look for the `<iframe>` with `stratacrm.app`). Services, prices, and available times inside the widget are managed in your Strata account, not in this site's files.
 
-Every **Book Now** button on the site links to `book.html`.
+Every **Book Now** button on the site links to `/book/`.
 
 The small script under the widget resizes the frame to fit each booking step, so there's no empty space or inner scrolling. When a customer finishes booking, the page fires a `strata-booking-complete` event you can use for conversion tracking.
 
 ## Strata lead form
 
-`contact.html` has a Strata lead form next to the contact info (look for `data-strata-embed`). Leads from it go straight into your Strata account. The form's fields are managed in Strata.
+`contact/index.html` has a Strata lead form next to the contact info (look for `data-strata-embed`). Leads from it go straight into your Strata account. The form's fields are managed in Strata.
 
 ### Package and Care Plan picks
 
-Each "Request This Package" button on `pricing.html` and each "Inquire About" button on `care-plans.html` links to the Contact page with the pick in the link, like `contact.html?interest=package-showroom`. The codes are `package-pet-owner`, `package-deep-clean`, `package-family-hauler`, `package-showroom`, `membership-copper-care`, and `membership-talon-care` (the Care Plan codes kept their original names so old links keep working). Older `?package=showroom` links still work.
+Each "Request This Package" button on `pricing/index.html` and each "Inquire About" button on `care-plans/index.html` links to the Contact page with the pick in the link, like `contact.html?interest=package-showroom`. The codes are `package-pet-owner`, `package-deep-clean`, `package-family-hauler`, `package-showroom`, `membership-copper-care`, and `membership-talon-care` (the Care Plan codes kept their original names so old links keep working). Older `?package=showroom` links still work.
 
 `js/interest.js` then:
 
@@ -111,7 +136,7 @@ With no package (or an unknown one) in the link, the Contact page works exactly 
 
 ## Put it online with cPanel
 
-1. Zip the site files: `index.html`, `pricing.html`, `care-plans.html`, `about.html`, `contact.html`, `book.html`, `packages.html`, `memberships.html`, `sitemap.xml`, `favicon.ico`, and the `css`, `js`, and `assets` folders.
+1. Zip the site: `index.html`, `packages.html`, `memberships.html`, `robots.txt`, `sitemap.xml`, `favicon.ico`, and the `pricing`, `care-plans`, `about`, `contact`, `book`, `css`, `js`, and `assets` folders.
 2. In cPanel, open **File Manager** and go to your domain's folder (usually `public_html`).
 3. Click **Upload** and pick the zip.
 4. Right click the zip, choose **Extract**, and overwrite the old files when asked.
@@ -119,7 +144,7 @@ With no package (or an unknown one) in the link, the Contact page works exactly 
 
 ### The `.htaccess` file
 
-`.htaccess` holds the 301 redirects. Your host may already have its own `.htaccess` in `public_html`, so don't overwrite it blindly:
+`.htaccess` holds the clean URL redirects. Your host may already have its own `.htaccess` in `public_html`, so don't overwrite it blindly:
 
 1. In File Manager, click **Settings** (top right) and turn on **Show Hidden Files**.
 2. If `public_html` has no `.htaccess`, upload this one.
@@ -131,6 +156,7 @@ Docs: [cPanel File Manager](https://docs.cpanel.net/cpanel/files/file-manager/)
 
 * Confirm site prices still match Strata
 * Submit `sitemap.xml` in Google Search Console
+* Set up and verify your Google Business Profile as a service area business
 * Add real before and after photos of your work
-* Fill in the Care Plan FAQ (billing, canceling, contract) in the commented block in `care-plans.html`
+* Fill in the Care Plan FAQ (billing, canceling, contract) in the commented block in `care-plans/index.html`
 * Test the booking widget and every page on your phone

@@ -373,3 +373,8 @@ section { padding: 100px 0; }
   .cross-banner .btn { width: 100%; }
 }
 @media (max-width: 760px) { .hero-watermark::before { background-size: 92% auto; } .hero-centered { padding: 80px 0 90px; } }
+
+/* Service area list (home) */
+.area-list { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 820px; margin: 0 auto 26px; }
+.area-list li { padding: 10px 18px; border: 1px solid var(--line); border-radius: 999px; background: var(--char); font-weight: 500; }
+.area-list li::before { content: "★"; color: var(--copper); margin-right: 8px; }
